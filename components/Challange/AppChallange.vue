@@ -383,6 +383,11 @@ h3 {
           padding: .5rem 1.5rem;
           background-color: $color-secondary;
           text-transform: uppercase;
+
+          @include respond(phone) { 
+            font-size: 1.4rem;
+            padding: .8rem 2rem;
+          }
         
         &:hover {
           background-color: darken( $color-secondary, 15% )

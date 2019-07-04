@@ -40,7 +40,6 @@ export default {
   plugins: [
     '~plugins/core-components.js',
     '~/plugins/directives.js',
-    '~/plugins/bus',
     { src: "~/plugins/google-maps", ssr: true },
   ],
 

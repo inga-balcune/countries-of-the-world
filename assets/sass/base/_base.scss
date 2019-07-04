@@ -1,0 +1,67 @@
+/* Remove browser default styles */
+
+/* Remove browser default styles */
+/* copy * html & body and make amendments to body */
+
+*,
+*::after,
+*::before {
+   margin: 0;
+   padding: 0;
+   box-sizing: inherit;
+}
+
+/* change your html font-size to 62.5%
+which is 10px from 16px default f-size
+for easier conversion to rem */
+
+html {
+    // defines what 1 rem is 
+ font-size: 62.5%; // 1rem = 10px; 10px/16px = 62.5%
+ scroll-behavior: smooth;
+ background-color: $color-white;
+ height: 100%;
+
+   @include respond(tab-big) { //width < 1370
+      font-size: 60%; 
+   }
+
+   @include respond(tab-land) { //width < 1200
+      font-size: 56.25%; // 1rem = 9px; 9/16 = 56.25%
+   }
+
+   @include respond(tab-port) { // width < 900
+      font-size: 50%; // 1rem = 8px; 8/16 = 50%
+   }
+
+   @include respond(big-desktop) {
+      font-size: 75%; // 1rem = 12px, 12/16
+   }
+
+ 
+}
+
+/* Set font family and other page settings in body tag
+Adding border-box in body makes it a better practice */
+
+body {
+   box-sizing: border-box;
+   padding-top: 10rem;
+   min-height: 100%;
+
+   @include respond(phone) { 
+      padding-top: 15rem;
+   }
+
+}
+
+/* 95vh = 95% of vieport height */
+/* background-size: cover - will cover the entire container */
+/* background-position: center; - makes sure that the image always stays in the middle amd doesn't get cropped when resizing */
+/* linear-gradient on top of the image can be added using background-image property */
+/* clip-path - can use clippy generator  */
+
+::selection {
+   background-color: $color-tertiary;
+   color: $color-white;
+}

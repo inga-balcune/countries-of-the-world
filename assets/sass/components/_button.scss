@@ -1,0 +1,29 @@
+.page-button {
+    width: 14rem;
+    background-color: $color-primary;
+    opacity: .8;
+    color: $color-white;
+    font-size: 1.6rem;
+    border: none;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 1rem 2rem;
+
+    &:disabled {
+      opacity: .4;
+      cursor: default;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &:focus {
+      outline: none;
+  }
+
+  @include respond(phone) { 
+    width: 100%;
+  }
+}

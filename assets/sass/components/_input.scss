@@ -1,0 +1,51 @@
+input {
+    -webkit-appearance: none;
+    width: 30%;
+    border: 0;
+    padding: 1.2rem 1rem;
+    height: 4.8rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+    // border-bottom: .2rem solid $color-tertiary;
+    background: rgba($color-secondary, .25);
+    border-radius: 0;
+    color: $color-primary;
+    transition: all .15s ease;
+
+    &:hover {
+      background: rgba($color-secondary, .15);
+    }
+
+    @include respond(tab-land) { 
+      width: 40%;
+    }
+
+    @include respond(tab-port) { 
+      width: 50%;
+    }
+
+    @include respond(phone) { 
+      width: 100%;
+    }
+
+    &:not(:placeholder-shown)
+      + span {
+        color: $color-primary;
+        transform: translateY(-4rem) scale(.75);
+    }
+
+      &:focus {
+        background-color: none;
+        outline: none;
+      }
+
+      &:focus + span {
+        color: $color-primary;
+        transform: translateY(-45rem) scale(.75);
+      }
+
+      &:focus + .border {
+        transform: scaleX(1);
+      }
+
+  }

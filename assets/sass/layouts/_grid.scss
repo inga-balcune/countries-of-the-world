@@ -1,0 +1,21 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(290px, 1fr) );
+    grid-gap: 3rem;
+
+    @include respond(phone) { 
+        justify-items: center;
+    }
+   //  margin: 0 auto;
+
+   //  @include respond(tab-port) { // width < 900
+   //      grid-template-columns: 1fr 1fr;
+   //      max-width: 70rem;
+   //   }
+
+   //   @include respond(phone) { // width < 900
+   //      grid-template-columns: 1fr;
+   //   }
+
+    
+}

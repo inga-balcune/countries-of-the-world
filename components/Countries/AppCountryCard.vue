@@ -245,7 +245,7 @@ export default {
           &--card-meta {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             color: $color-quaternary;
 
 

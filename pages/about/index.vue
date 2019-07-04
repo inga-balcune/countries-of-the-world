@@ -7,7 +7,7 @@
      <h3>Challanges</h3>
       <p>Some of the biggest challenges I faced were around drag and drop functionality, communication between components, code structure, naming variables, giving class names, layout and design ideas.</p>
 
-    <h3>Project features</h3>
+    <h3>Features</h3>
     <p class='u-margin-bottom-medium'>In the development I have used the newest programming techniques which include the following languages and frameworks:</p>
 
     <div class='grid-container'>

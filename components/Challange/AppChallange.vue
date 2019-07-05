@@ -412,7 +412,7 @@ h3 {
   }
 
   &__countdown {
-    font-size: 2.7rem;
+    font-size: 2.6rem;
     height: 100%;
     text-align: center;
     border-bottom: .1rem solid $color-primary;

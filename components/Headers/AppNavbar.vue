@@ -56,14 +56,15 @@ export default {
 
   &__logo {
     display: block;
+    width: 40%;
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     font-size: 1.8rem;
     text-decoration: none;
     text-transform: uppercase;
     color: $color-quaternary;
-    padding: 1rem 2rem;
-    margin: 1rem 0;
+    padding: 1rem 0;
+    margin: 1rem auto;
     text-align: center;
 
     &--subtitle {
@@ -136,6 +137,8 @@ export default {
 
     &__logo {
       text-align: left;
+      width: auto;
+      margin: 1rem 1rem 1rem 3rem;
 
 
       &--subtitle {

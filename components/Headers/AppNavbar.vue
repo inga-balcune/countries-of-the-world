@@ -4,8 +4,7 @@
       <span class="navbar__toggle" @click='showMenu()'>
           <i class="fas fa-bars"></i>
       </span>
-      <!-- <a href="#" class="logo">logo</a> -->
-      <nuxt-link to='/' class='navbar__logo'><span class='navbar__logo--subtitle'>Developed by</span> <span class='navbar__logo--title'>Inga Balcune</span></nuxt-link>
+      <a href='https://inga-balcune-web-developer.herokuapp.com/' target='_blank' class='navbar__logo'><span class='navbar__logo--subtitle'>Developed by</span> <span class='navbar__logo--title'>Inga Balcune</span></a>
       <ul class="navbar__main-nav" :class="{active: isActive}">
         <li>
           <nuxt-link to='/' class='navbar__main-nav--nav-links'>Home</nuxt-link>
@@ -67,15 +66,15 @@ export default {
     margin: 1rem 0;
     text-align: center;
 
-    &:hover {
-      color: rgba($color-white, 1);
-    }
-
     &--subtitle {
         font-size: 1.2rem;
         display: block;
         margin-bottom: -.5rem;
-      }
+    }
+
+    &:hover {
+      color: rgba($color-white, 1);
+    }
 
   }
 

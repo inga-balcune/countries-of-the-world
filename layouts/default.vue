@@ -10,7 +10,7 @@
 <style lang='scss'>
 
 .content {
-  min-height: 82vh;
+  min-height: 85vh;
   // padding: 0 4rem;
   margin-bottom: 4rem;
 }

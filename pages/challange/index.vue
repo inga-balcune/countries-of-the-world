@@ -64,7 +64,16 @@ main {
 .page-button {
   width: 15%;
 
-  @include respond(phone) { 
+
+  // @include respond(phone) { 
+  //     width: 50%;
+  //   }
+
+    @include respond(notebook) { 
+      width: 30%;
+    }
+
+    @include respond(phone) { 
       width: 50%;
     }
 }

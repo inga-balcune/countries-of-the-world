@@ -96,7 +96,6 @@ h1 {
 .grid-container {
 
   &__item {
-    // background-color: pink;
 
     &--heading {
       font-weight: 700;

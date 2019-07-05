@@ -28,7 +28,7 @@
     }
 
     @if $breakpoint == notebook {
-        @media only screen and (max-width: 50em) { @content; } // 800px / 16
+        @media only screen and (max-width: 51em) { @content; } // 816px / 16
     }
 
     @if $breakpoint == tab-port {

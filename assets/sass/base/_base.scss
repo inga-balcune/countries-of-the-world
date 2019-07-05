@@ -46,12 +46,7 @@ Adding border-box in body makes it a better practice */
 
 body {
    box-sizing: border-box;
-   padding-top: 10rem;
    min-height: 100%;
-
-   @include respond(phone) { 
-      padding-top: 15rem;
-   }
 
 }
 

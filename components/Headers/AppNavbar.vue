@@ -1,31 +1,39 @@
 <template>
   <div>
-    <nav class='nav-section'> 
-      <div class="item nav-section__app-portfolio" @click.once='notice()'>
-            <!-- <img srcset="@/assets/img/logo-white.png" alt="Logo" class='nav-section__nav-logo'> -->
-            <nuxt-link to='/' class='nav-section__nav-link'><span class='nav-section__nav-link--subtitle'>Developed by</span> <span class='nav-section__nav-link--title'>Inga Balcune</span></nuxt-link>
-      </div>
-      <div class="item nav-section__app-home">
-              <nuxt-link to='/' class='nav-section__nav-link'>Home</nuxt-link>
-      </div>
-      <div class="item nav-section__app-countries">
-              <nuxt-link to='/countries' class='nav-section__nav-link'>Countries</nuxt-link>
-      </div>
-      <div class="item nav-section__app-quiz">
-              <nuxt-link to='/challange' class='nav-section__nav-link'>Challange</nuxt-link>
-      </div>
-      <div class="item nav-section__app-about">
-              <nuxt-link to='/about' class='nav-section__nav-link'>About</nuxt-link>
-      </div>
+    <nav class="navbar">
+      <span class="navbar__toggle" @click='showMenu()'>
+          <i class="fas fa-bars"></i>
+      </span>
+      <!-- <a href="#" class="logo">logo</a> -->
+      <nuxt-link to='/' class='navbar__logo'><span class='navbar__logo--subtitle'>Developed by</span> <span class='navbar__logo--title'>Inga Balcune</span></nuxt-link>
+      <ul class="navbar__main-nav" :class="{active: isActive}">
+        <li>
+          <nuxt-link to='/' class='navbar__main-nav--nav-links'>Home</nuxt-link>
+        </li>
+        <li>
+          <nuxt-link to='/countries' class='navbar__main-nav--nav-links'>Countries</nuxt-link>
+        </li>
+        <li>
+          <nuxt-link to='/challange' class='navbar__main-nav--nav-links'>Challange</nuxt-link>
+        </li>
+        <li>
+          <nuxt-link to='/about' class='navbar__main-nav--nav-links'>About</nuxt-link>
+        </li>
+      </ul>
     </nav>
   </div>
 </template>
 
 <script>
 export default {
+  data() {
+    return {
+      isActive: false
+    }
+  },
   methods: {
-    notice() {
-      return alert("Soon it's going to bring you to my portfolio but for now, back to the homepage")
+    showMenu() {
+      this.isActive = !this.isActive
     }
   }
   
@@ -35,124 +43,152 @@ export default {
 
 <style lang='scss' scoped>
 
-.nav-section {
-
-  display: grid;
-  grid-template-columns: 60% 8% 12% 12% 8%;
-  grid-template-rows: auto auto auto auto auto;
-  grid-template-areas: 
-  'portfolio home countries quiz about';
+.navbar {
+  font-size: 1.8rem;
   background-color: $color-black;
+  border: .1rem solid rgba($color-black, 0.2);
   opacity: 0.9;
-  padding: 2rem 3rem;
-  position: fixed;
+  height: auto;
   top: 0;
   width: 100%;
   z-index: 3;
+  position: relative;
+  
 
-  @include respond(tab-land) { 
-    grid-template-columns: 50% 10% 15% 15% 10%;
-  }
-
-  @include respond(notebook) { 
-    grid-template-columns: 40% 12% 18% 18% 12%;
-  }
-
-  @include respond(phone) { 
-      grid-template-columns: 1fr;
-      grid-template-areas:
-        'portfolio'
-        'home'
-        'countries'
-        'quiz'
-        'about';
-  }
-
-
-
-.item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 1rem;
-
-   @include respond(phone) { 
-      justify-self: center;
-    }
-  }
-
- &__nav-logo {
-   height: 4rem;
-   width: 4rem;
- } 
-
- &__nav-link {
-    
-    &:link {
-      font-family: 'Montserrat', sans-serif;
-      text-decoration: none;
-      text-transform: uppercase;
-      transition: all .3s;
-      color: $color-quaternary;
-      font-size: 1.8rem;
-      // letter-spacing: .1rem;
-      font-weight: 600;
-    }
-    
-
-    &:visited {
-      color: $color-quaternary;
-    }
+  &__logo {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 1.8rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $color-quaternary;
+    padding: 1rem 2rem;
+    margin: 1rem 0;
+    text-align: center;
 
     &:hover {
-      color: $color-white;
-    }
-
-    &:active {
-      color: $color-white;
+      color: rgba($color-white, 1);
     }
 
     &--subtitle {
-      font-size: 1.2rem;
-      display: block;
-      margin-bottom: -.7rem;
+        font-size: 1.2rem;
+        display: block;
+        margin-bottom: -.5rem;
+      }
 
-      @include respond(phone) { 
-        display: inline-block;
-       }
+  }
+
+
+  &__toggle {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    cursor: pointer;
+    color: rgba($color-white, 0.8);
+    font-size: 2.4rem;
+  }
+
+  &__main-nav {
+    list-style-type: none;
+    transition: opacity 1s ease-out;
+    opacity: 0; 
+    height: 0;
+    overflow: hidden;
+    
+    
+
+    &--nav-links {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 1.8rem;
+      text-decoration: none;
+      text-transform: uppercase;
+      color: $color-quaternary;
+      padding: .5rem 2rem;
+
+      &:hover {
+        color: rgba($color-white, 1);
+      }
     }
 
   }
 
-  &__app-portfolio {
-    grid-area: portfolio;
-    // align-self: left;
-    justify-self: start;
+  &__main-nav li {
+    text-align: center;
+    margin: .7rem auto;
 
   }
+}
 
-  &__app-home {
-    grid-area: home;
-    // align-self: left;
-    justify-self: center;
+.active {
+  opacity: 1;
+  height: auto;
+  margin-top: -1rem;
+}
+
+@media screen and (min-width: 720px) {
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 0;
+    height: 8rem;
+    align-items: center;
+
+    &__logo {
+      text-align: left;
+
+
+      &--subtitle {
+        font-size: 1.2rem;
+        display: block;
+        margin-bottom: -.7rem;
+
+      }
+
+      &--title {
+        display: inline-block;
+      }
+
+      &:hover {
+        color: rgba($color-white, 1);
+      }
+
+      &:active {
+        color: $color-white;
+      }
+
+       &:visited {
+        color: $color-quaternary;
+      }
+    }
+
+    &__toggle {
+      display: none;
+    }
+
+    &__main-nav {
+      display: flex;
+      margin-right: 3rem;
+      flex-direction: row;
+      justify-content: flex-end;
+      opacity: 1;
+      height: auto;
+
+      & li {
+        margin: 0;
+      }
+
+      &--nav-links {
+        margin-left: 4rem;
+
+        &:hover {
+          color: rgba($color-white, 1);
+        }
+      }
+    }
 
   }
-
-  &__app-countries {
-    grid-area: countries;
-    justify-self: center;
-  }
-
-  &__app-quiz {
-    grid-area: quiz;
-    justify-self: center;
-  }
-
-  &__app-about {
-    grid-area: about;
-    justify-self: center;
-  }
-
 
 }
 

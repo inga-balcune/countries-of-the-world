@@ -281,6 +281,11 @@ export default {
                 &:visited {
                     background-color: $color-primary;
                 }
+
+                @media only screen and (max-width: 37.5em), 
+                    only screen and (hover: none) {
+                  &:hover { background-color: inherit; }
+                }
               }
 
                

@@ -1,21 +1,21 @@
 <template>
   <div>
     <nav class="navbar">
-      <span class="navbar__toggle" @click='showMenu()'>
+      <span class="navbar__toggle" @click='showMenu'>
           <i class="fas fa-bars"></i>
       </span>
-      <a href='https://inga-balcune-web-developer.herokuapp.com/' target='_blank' class='navbar__logo'><span class='navbar__logo--subtitle'>Developed by</span> <span class='navbar__logo--title'>Inga Balcune</span></a>
+      <a href='https://inga-balcune-portfolio.herokuapp.com/' target='_blank' class='navbar__logo'><span class='navbar__logo--subtitle'>Developed by</span> <span class='navbar__logo--title'>Inga Balcune</span></a>
       <ul class="navbar__main-nav" :class="{active: isActive}">
-        <li>
+        <li @click='showMenu'>
           <nuxt-link to='/' class='navbar__main-nav--nav-links'>Home</nuxt-link>
         </li>
-        <li>
+        <li @click='showMenu'>
           <nuxt-link to='/countries' class='navbar__main-nav--nav-links'>Countries</nuxt-link>
         </li>
-        <li>
+        <li @click='showMenu'>
           <nuxt-link to='/challange' class='navbar__main-nav--nav-links'>Challange</nuxt-link>
         </li>
-        <li>
+        <li @click='showMenu'>
           <nuxt-link to='/about' class='navbar__main-nav--nav-links'>About</nuxt-link>
         </li>
       </ul>
@@ -91,10 +91,8 @@ export default {
 
   &__main-nav {
     list-style-type: none;
-    transition: opacity 1s ease-out;
-    opacity: 0; 
-    height: 0;
-    overflow: hidden;
+    // overflow: hidden;
+    display: none;
     
     
 
@@ -122,9 +120,7 @@ export default {
 }
 
 .active {
-  opacity: 1;
-  height: auto;
-  margin-top: -1rem;
+  display: block;
 }
 
 @media screen and (min-width: 720px) {

@@ -51,7 +51,10 @@ export default {
     '@nuxtjs/axios',
     '@neneos/nuxt-animate.css',
     '@nuxtjs/style-resources',
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
+    ['@nuxtjs/google-analytics', {
+      id: 'UA-143406553-2'
+    }]
   ],
   /*
   ** Axios module configuration

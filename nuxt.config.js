@@ -54,8 +54,12 @@ export default {
     '@nuxtjs/dotenv',
     ['@nuxtjs/google-analytics', {
       id: 'UA-143406553-2'
-    }]
+    }],
+    '@bazzite/nuxt-optimized-images',
   ],
+  optimizedImages: {
+    optimizeImages: true
+  },
   /*
   ** Axios module configuration
   */

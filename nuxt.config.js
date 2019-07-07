@@ -14,6 +14,9 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: pkg.description }
     ],
+    script: [
+      { src: 'https://unpkg.com/es7-object-polyfill' }
+    ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700&display=swap' },
@@ -122,20 +125,6 @@ export default {
   ** Build configuration
   */
   build: {
-    babel: {
-      presets({ isServer }) {
-        return [
-          [
-            "@nuxt/babel-preset-app",
-            {
-              targets: isServer
-                ? { node: "current" }
-                : { browsers: ["last 2 versions"], ie: 11 }
-            }
-          ]
-        ]
-      }
-    },
     /*
     ** You can extend webpack config here
     */

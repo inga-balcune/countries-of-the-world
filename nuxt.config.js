@@ -98,7 +98,7 @@ export default {
       id: 'UA-143406553-2'
     }],
     '@bazzite/nuxt-optimized-images',
-    'nuxt-polyfill'
+    'nuxt-babel'
   ],
   optimizedImages: {
     optimizeImages: true

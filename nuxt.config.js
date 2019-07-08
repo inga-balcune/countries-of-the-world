@@ -131,6 +131,13 @@ export default {
   ** Build configuration
   */
   build: {
+    postcss: {
+      preset: {
+        autoprefixer: {
+          browsers: ['ie >= 10']
+        }
+      }
+    },
     /*
     ** You can extend webpack config here
     */

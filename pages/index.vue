@@ -1,6 +1,6 @@
 <template>
   <div>
-    <main class='home-section'>
+    <section role=”main” class='home-section'>
       <header class='home-section__header' :style="{ 'background-image': 'linear-gradient(rgba(234, 238, 240,0.9), rgba(234, 238, 240,0.9)), url(' + image + ')' }">
         <div class="home-section__header--content">
           <h1 class='home-section__header--title'>Countries of the World <span class='home-section__header--title--sub'>Flags, capitals, areas, regions, maps, news</span></h1>
@@ -8,7 +8,7 @@
         </div>
       </header>
       
-    </main>
+    </section>
       
   </div>
   

@@ -100,7 +100,6 @@ h1 {
     &--heading {
       font-weight: 700;
       text-align: center;
-      // margin-bottom: rem;
       text-transform: uppercase;
       
         &:after {

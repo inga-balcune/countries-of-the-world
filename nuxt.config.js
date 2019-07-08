@@ -134,7 +134,8 @@ export default {
     postcss: {
       preset: {
         autoprefixer: {
-          browsers: ['ie >= 10']
+          browsers: ['ie >= 10'],
+          grid: true
         }
       }
     },

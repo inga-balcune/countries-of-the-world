@@ -4,7 +4,12 @@
       <div class="card" v-for='(country, index) in filteredCountries' :key='index'
                 :class="{cardMargin : filteredCountries.length <= 3}">
           <div class="card__thumbnail">
+            <!-- <div>
               <img class="card__thumbnail--image" :src="country.flag" :alt="'Flag of ' + country.name">
+            </div> -->
+            <div class="card__thumbnail--image" v-bind:style="{backgroundImage: 'url(' + country.flag + ')'}">
+                &nbsp;
+            </div>
               <div class="card__thumbnail--logo">
                   {{country.alpha2Code}}
               </div>
@@ -94,6 +99,12 @@ export default {
     @media only screen and (max-width: 37.5em), 
       only screen and (hover: none) {
         height: 63rem;
+    }
+
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        margin: 2rem;
+        min-width: 33rem;
+        max-width: 33rem;
     }
 
     &:hover {
@@ -186,6 +197,11 @@ export default {
         object-fit: cover;
         background-size: cover;
 
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+          background-size: 100% 100%;
+          
+        }
+
       }
 
     }
@@ -248,11 +264,20 @@ export default {
             font-size: 1.3rem;
             color: $color-quaternary;
 
+             @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+              display: block;
+            }
+
 
             &--info {
               text-align: left;
               margin-top: auto;
               letter-spacing: .1rem;
+
+              @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                display: block;
+                float: left;
+              }
             }
 
             &--link {
@@ -263,12 +288,22 @@ export default {
               color: $color-primary;
               margin-top: auto;
 
+              @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                display: block;
+                float: right;
+              }
+
 
               & span {
                 padding: .4rem;
                 border-radius: .1rem;
                 transition: all 0.3s ease-out; 
                 // background-color: $color-quaternary;
+
+                @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                  -webkit-transition: all 0.3s ease-out;
+                  transition: all 0.3s ease-out; 
+                }
 
                 &:hover {
                   background-color: $color-tertiary;

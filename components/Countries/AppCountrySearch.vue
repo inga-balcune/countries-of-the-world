@@ -46,8 +46,17 @@ export default {
     color: $color-primary;
     font-weight: 300;
     letter-spacing: .08rem;
+    -webkit-transform-origin: 0 0;
     transform-origin: 0 0;
+    -webkit-transition: all .5s ease;
     transition: all .5s ease;
+
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      position: absolute;
+      top: -3.5rem;
+      left: 0;
+      font-size: 1.2rem;
+    }
 
     @include respond(phone) { 
       // height: 25vh;

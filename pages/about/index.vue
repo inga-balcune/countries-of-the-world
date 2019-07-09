@@ -1,7 +1,7 @@
 <template>
   <div class='app-about-section'>
     <h1>My project</h1>
-    <p class='app-about-section__content'>Hi, I am Inga, a new front end developer based in Copenhagen, Denmark.</p>
+    <p class='app-about-section__content'>Hello, I am Inga, a new front end developer based in Copenhagen, Denmark.</p>
     <p class='app-about-section__content'>This is my first serious web development project, which is meant to showcase my newly acquired coding skills.</p> 
 
      <h3>Challanges</h3>
@@ -95,7 +95,20 @@ h1 {
 
 .grid-container {
 
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    margin: 0 auto;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+
   &__item {
+
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      margin: 2rem;
+      min-width: 33rem;
+      max-width: 33rem;
+    }
 
     &--heading {
       font-weight: 700;

@@ -1,6 +1,6 @@
-# country-page
+# Countries of the world
 
-> Countries related information and a quiz
+> Countries related information and a quiz challange
 
 ## Build Setup
 

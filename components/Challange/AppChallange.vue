@@ -1,7 +1,7 @@
 <template>
   <div class='animated fadeIn delay-.5s'>
     <h3 class='u-line-height-big animated delay-1s' v-if='!timeIsOver && !allAnswersCorrect'>Which countries include: <strong>"{{letters[count].toUpperCase()}}"</strong>?</h3>
-    <h3 class='u-line-height-big time-notification__over' v-if='!timeIsOver && allAnswersCorrect'>100%! You are awesome</h3>
+    <h3 class='u-line-height-big time-notification__over' v-if='!timeIsOver && allAnswersCorrect'>Well done, 100% correct!</h3>
     <h3 class='u-line-height-big time-notification__over' v-if='timeIsOver'>Time is over!</h3>
       <div class='time-notification animated fadeIn delay-.5s' :key='timesUpKey' v-if='timeIsOver'>
         <p class='u-line-height-big time-notification__score'>Your score {{score}} of {{countries.length}}</p>
@@ -32,10 +32,15 @@
                  class='content-container__wrapper__questions-wrapper__items' 
                 :class="[(typeof questionIndex[index] === 'undefined') ? 'container__questions-wrapper__items' 
                 : (typeof questionIndex[index] !== 'undefined' && questionIndex[index] ? 'correct' : 'incorrect')]">
-
-              <img class='content-container__wrapper__questions-wrapper__items--image' 
+              <div class="image-wrapper">
+                <!-- <img class='content-container__wrapper__questions-wrapper__items--image' 
                     :src="country.flag" 
-                    :alt="'Flag of ' + country.name">
+                    :alt="'Flag of ' + country.name"> -->
+                <div class="content-container__wrapper__questions-wrapper__items--image" v-bind:style="{backgroundImage: 'url(' + country.flag + ')'}"
+                    preserveAspectRatio="none">
+                  &nbsp;
+                </div>
+              </div>
               <draggable
                   v-bind='dropzoneOptions'
                   @add='addToList'
@@ -187,7 +192,6 @@ export default {
       return this.percents
     },
     onDraggableStart(index) {
-      // console.log(this.$refs['draggable-parent'])
       this.$set(this.answerIndex, index, index)
     },
     forceRerender() {
@@ -217,7 +221,6 @@ export default {
     },
     // emmited from AppCountdown, if time is over then rerender elements
     checkOnTime(value) {
-      console.log('hello hello!')
       this.timeIsOver = value
       if (this.timeIsOver === true) {
         this.timesUpKey += 1
@@ -279,7 +282,6 @@ h3 {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-
     text-align: center;
 
       @include respond(phone) { 
@@ -328,17 +330,28 @@ h3 {
     grid-template-columns: 50% 50%;
     grid-gap: 1rem;
 
+     @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+      }
+
+
     @include respond(phone) { 
         grid-template-columns: 1fr;
         grid-row-gap: 2rem;
-        // margin-top: 15rem;
+        flex-direction: column;
     }
 
     &__questions-wrapper {
       width: 100%;
       display: grid;
-      // grid-template-columns: repeat( auto-fit, minmax(290px, 1fr) );
-      
+
+      @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        width: 35rem;
+        margin-right: 2rem;
+      }
+
 
       &__items {
         background-color: $color-primary;
@@ -351,6 +364,16 @@ h3 {
         align-items: center;
         padding: .5rem;
 
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-orient: horizontal; 
+          -webkit-box-direction: normal; 
+          -ms-flex-direction: row; 
+          flex-direction: row;
+        }
+
         @include respond(phone) { 
           margin: .5rem auto;
         }
@@ -359,13 +382,38 @@ h3 {
           background: rgba($color-primary, .8);
         }
 
+        .image-wrapper {
+
+          @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+            width: 10rem;
+          }
+        }
+
         &--image {
-          width: 6.6rem;
+          width: 7rem;
           height: 4.5rem;
+          // object-fit: cover;
+          background-size: 100% 100%;
+
+          // @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+          //   width: 25%;
+          // }
+        }
+
+        .dropzone-wrapper {
+
+          @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+            width: 30rem;
+          }
+          
         }
 
         &--dropzone {
           text-transform: uppercase;
+
+          // @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+          //   width: 70%;
+          // }
         }
 
 
@@ -383,6 +431,10 @@ h3 {
           padding: .5rem 1.5rem;
           background-color: $color-secondary;
           text-transform: uppercase;
+
+          @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+            // width: 50%;
+          }
 
           @include respond(phone) { 
             font-size: 1.4rem;
@@ -404,11 +456,30 @@ h3 {
   grid-template-columns: 1fr 4fr 1fr;
   grid-gap: 1rem;
 
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    display: block;
+  }
+
   @include respond(phone) { 
       width: 100%;
-      grid-template-columns: 1fr;
-      grid-row-gap: 2rem;
-      // margin-bottom: 8rem;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+      -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+      justify-content: flex-start;
+      -webkit-align-content: flex-start;
+      -ms-flex-line-pack: start;
+      align-content: flex-start;
+      -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+      align-items: flex-start;
   }
 
   &__countdown {
@@ -417,7 +488,16 @@ h3 {
     text-align: center;
     border-bottom: .1rem solid $color-primary;
 
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      display: inline-block;
+      float: left;
+      width: 20%;
+      margin-right: 2rem;
+    }
+
     @include respond(phone) { 
+      font-size: 2.4rem;
+      margin: 0 auto;
       border-bottom: none;
     }
 
@@ -426,13 +506,34 @@ h3 {
   &__progressbar {
     width: 100%;
 
-      @include respond(phone) { 
-      border-bottom: none;
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      display: inline-block;
+      float: left;
+      width: 55%;
+      margin-right: 2rem;
+
     }
+
+      @include respond(phone) { 
+        border-bottom: none;
+        margin-bottom: 1rem;
+        width: 100%;
+      }
   }
 
   &__button {
     width: 100%;
+
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      display: inline-block;
+      float: left;
+      width: 15%;
+    }
+
+    @include respond(phone) { 
+      margin-bottom: 1rem;
+      width: 100%;
+    }
   }
 
 }

@@ -4,15 +4,15 @@
       <h1>All countries list</h1>
     </header>
 
-    <section>
+    <section class='search'>
       <AppCountrySearch />
     </section>
 
-    <section>
+    <section class='stats'>
       <AppStats />
     </section>
 
-    <section>
+    <section class='cards'>
       <AppCountryCard/>
     </section>
 
@@ -41,6 +41,28 @@ head () {
   }
 }
 
+.search {
+
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    margin: 0 4rem;
+  }
+
+}
+
+.stats {
+
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    margin: 0 4rem;
+  }
+
+}
+
+.cards {
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    margin: 0 2.5rem;
+  }
+
+}
 
 
 </style>

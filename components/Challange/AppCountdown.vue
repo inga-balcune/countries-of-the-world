@@ -83,5 +83,6 @@ export default {
   &--redClass {
     color: $color-wrongAnswer;
   }
+
 }
 </style>

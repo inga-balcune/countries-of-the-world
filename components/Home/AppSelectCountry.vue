@@ -36,10 +36,20 @@ export default {
   grid-template-columns: 4fr 1fr;
   grid-column-gap: 1rem;
 
-  @include respond(phone) { 
-      grid-template-columns: 1fr;
-      grid-row-gap: 1rem;
+   @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        display: block;
+        width: 100%;
     }
+
+  @include respond(phone) { 
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
 }
 
 .select-country {
@@ -59,10 +69,31 @@ export default {
     background-color: $color-white;
     opacity: 0.7;
 
-    @include respond(phone) { 
-      width: 110%;
-      font-size: 1.4rem;
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      width: 80%;
+      // margin-right: .5rem;
+      float: left;
     }
+
+    // @media all and (-ms-high-contrast: none), (-ms-high-contrast: active), 
+    //   only screen and (max-width: 56.25em) {
+    //   width: 90%;
+    //   margin-right: 1rem;
+    //   float: left;
+    // }
+
+    // @media all and (-ms-high-contrast: none), (-ms-high-contrast: active), 
+    //   only screen and (max-width: 37.5em) {
+    //   clear: both;
+    //   margin-bottom: 1rem;
+    // }
+
+    @include respond(phone) { 
+      width: 100%;
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+    }
+
 
     &:-ms-expand {
         display: none;
@@ -83,9 +114,17 @@ export default {
 
   .page-button {
 
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        padding: .4rem 1rem;
+        display: block;
+        float: right;
+        width: 17%;
+    }
+
     @include respond(phone) { 
       padding: .5rem 0;
-      width: 110%;
+      width: 100%;
+      clear: both;
     }
 
   }

@@ -5,23 +5,13 @@
 
     @include respond(phone) { 
         justify-items: center;
+
     }
-   //  margin: 0 auto;
-
-   //  @include respond(tab-port) { // width < 900
-   //      grid-template-columns: 1fr 1fr;
-   //      max-width: 70rem;
-   //   }
-
-   //   @include respond(phone) { // width < 900
-   //      grid-template-columns: 1fr;
-   //   }
-
-    
 }
 
 .grid-container {
-    @include explorer() {
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        /* IE10+ CSS styles go here */
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
@@ -30,4 +20,23 @@
         -ms-flex-line-pack: start;
         align-content: flex-start;
     }
+
+    @include respond(tab-land) { 
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+
+    @include respond(phone) { 
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+        }
 }

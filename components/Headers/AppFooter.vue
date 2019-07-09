@@ -4,15 +4,15 @@
       <div class="item footer-section__app-copyright">
             <p class='footer-section__footer-copyright'>Site and copyright &copy; {{year}} Inga Balcune</p>
       </div>
-      <div class="item footer-section__app-facebook">
+         <div class="item footer-section__app-facebook">
               <a href="https://www.facebook.com/inga.balcune" target='blank' class='footer-section__footer-link'><i class="fab fa-facebook-f"></i></a>
-      </div>
-      <div class="item footer-section__app-linkedin">
-              <a href="https://www.linkedin.com/in/ingabalcune" target='blank' class='footer-section__footer-link'><i class="fab fa-linkedin-in"></i></a>
-      </div>
-      <div class="item footer-section__app-instagram">
-              <a href="https://www.instagram.com/ingabalcune" target='blank' class='footer-section__footer-link'><i class="fab fa-instagram"></i></a>
-      </div>
+        </div>
+        <div class="item footer-section__app-linkedin">
+                <a href="https://www.linkedin.com/in/ingabalcune" target='blank' class='footer-section__footer-link'><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <div class="item footer-section__app-instagram">
+                <a href="https://www.instagram.com/ingabalcune" target='blank' class='footer-section__footer-link'><i class="fab fa-instagram"></i></a>
+        </div>
     </footer>
   </div>
 </template>
@@ -39,7 +39,7 @@ export default {
   grid-template-areas: 
   'copyright facebook linkedin instagram';
   background-color: $color-black;
-  opacity: 0.9;
+  
   padding: 2rem 4rem;
   bottom: 0;
   width: 100%;
@@ -47,12 +47,35 @@ export default {
   clear: both;
   margin-top: auto;
 
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    display: block;
+    margin-top: auto;
+    width: 100%;
+    height: 6rem;
+    background-color: $color-black;
+    opacity: 0.9;
+    bottom: 0;
+  }
+
+   @include respond(tab-port) { 
+    bottom: 0;
+  }
+
   @include respond(phone) { 
-      grid-template-columns: 1fr 1fr 1fr;
-      grid-template-rows: auto;
-      grid-template-areas:
-        'facebook linkedin instagram'
-        'copyright copyright copyright';
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+    -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+    height: auto;
   }
 
 .item {
@@ -61,7 +84,7 @@ export default {
   align-items: center;
 
    @include respond(phone) { 
-      justify-self: center;
+      margin: auto;
   }
 }
 
@@ -99,21 +122,46 @@ export default {
     grid-area: copyright;
     justify-self: start;
 
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      display: block;
+      float: left;
+    }
+
   }
 
   &__app-facebook {
     grid-area: facebook;
     justify-self: end;
+
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      display: block;
+      float: right;
+    }
+
   }
 
   &__app-linkedin {
     grid-area: linkedin;
     justify-self: end;
+
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      display: block;
+      float: right;
+      margin-right: 2rem;
+    }
+
+    
   }
 
   &__app-instagram {
     grid-area: instagram;
     justify-self: end;
+
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      display: block;
+      float: right;
+      margin-right: 2rem;
+    }
   }
 
 

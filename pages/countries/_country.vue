@@ -10,9 +10,13 @@
           <h2>General information</h2> 
         </header>
         <div class='section-wrapper'>
-          <div>
+          <!-- <div>
             <img class='section-wrapper__flag' :src="country.flag" :alt="'Flag of ' + country.name" />
-          </div>
+          </div> -->
+
+          <div class="section-wrapper__flag" v-bind:style="{backgroundImage: 'url(' + country.flag + ')'}">
+                &nbsp;
+            </div>
           <div>
             <p class='section-wrapper__text' v-if='officialName'>Official name: {{officialName}}</p>
             <p class='section-wrapper__text' v-if='country.demonym'>Nation: {{country.demonym}}</p>
@@ -189,17 +193,43 @@ export default {
   // background-color: pink;
   align-items: start;
 
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
 
-  @include respond(phone) { 
+
+  @include respond(tab-port) { 
     grid-template-columns: 1fr;
   }
 
   &__flag {
     height: 40rem;
     width: 60rem;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+     @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      background-size: 100% 100%;
+      margin-bottom: 1rem;
+      margin-right: 2rem;
+    }
+
+    @include respond(tab-port) { 
+      width: 100%;
+      height: 50rem;
+    }
 
     @include respond(phone) { 
-      height: 70%;
+      background-size: 100% 100%;
+      height: 30rem;
       width: 100%;
     }
   }
@@ -226,28 +256,33 @@ export default {
 
 .grid-container {
 
+  @include respond(tab-land) { 
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+
   &__card-wrapper {
     width: 100%;
     height: auto;
     overflow: hidden;
   }
 
+
 }
 
 .card {
-    // padding: .5rem;
-    // max-width: 27rem;
-    // min-height: 32rem;
     background-color: $color-white;
     -webkit-box-shadow: 0 10px 20px rgba($color-black,0.19), 0 6px 6px rgba($color-black,0.23);
     -moz-box-shadow: 0 10px 20px rgba($color-black,0.19), 0 6px 6px rgba($color-black,0.23);
     box-shadow: 0 10px 20px rgba($color-black,0.19), 0 6px 6px rgba($color-black,0.23);
     transition: all .3s;
 
-    // @include respond(phone) { 
-    //   width: 30rem;
-    //   margin: 1.5rem 0 0 0;
-    // }
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        margin: 2rem;
+        max-width: 33rem;
+        max-height: auto;
+    }
 
     &:hover {
       transform: translateY(-.2rem);
@@ -263,6 +298,12 @@ export default {
     &__image {
       width: 100%;
       height: 100%;
+    }
+
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      img[src$=".svg"] {
+        width: 100%; 
+      }
     }
 
     &__title {

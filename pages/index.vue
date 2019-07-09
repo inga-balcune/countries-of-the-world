@@ -39,7 +39,7 @@ export default {
 
   &__header {
     margin-top: -10rem;
-    height: 90vh;
+    height: 100vh;
     background-size: cover;
     background-position: center;
     position: relative;

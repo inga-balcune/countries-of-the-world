@@ -53,3 +53,9 @@
 // -tab-port 768
 // -tab-land 992
 // -big desktop 1200px+
+
+@mixin explorer() {
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        /* IE10+ CSS styles go here */
+    }
+}

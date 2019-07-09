@@ -1,13 +1,9 @@
 .grid-container {
-    display: -ms-grid;
     display: grid;
-    -ms-grid-columns: ( minmax(290px, 1fr) )[auto-fit];
     grid-template-columns: repeat( auto-fit, minmax(290px, 1fr) );
-    margin: 3rem;
     grid-gap: 3rem;
 
     @include respond(phone) { 
-        -ms-grid-column-align: center;
         justify-items: center;
     }
    //  margin: 0 auto;
@@ -22,4 +18,16 @@
    //   }
 
     
+}
+
+.grid-container {
+    @include explorer() {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -ms-flex-line-pack: start;
+        align-content: flex-start;
+    }
 }

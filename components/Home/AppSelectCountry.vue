@@ -32,14 +32,11 @@ export default {
 <style lang='scss' scoped>
 
 .selection-wrapper {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 4fr 1fr;
   grid-template-columns: 4fr 1fr;
   grid-column-gap: 1rem;
 
   @include respond(phone) { 
-      -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
       grid-row-gap: 1rem;
     }

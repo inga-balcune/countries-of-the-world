@@ -131,12 +131,6 @@ export default {
   ** Build configuration
   */
   build: {
-    preset: {
-      // Change the postcss-preset-env settings
-      autoprefixer: {
-        grid: 'autoplace'
-      }
-    },
     /*
     ** You can extend webpack config here
     */

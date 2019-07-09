@@ -12,31 +12,34 @@
     "heroku-postbuild": "npm run build"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.4.4",
     "@bazzite/nuxt-optimized-images": "^0.2.1",
     "@neneos/nuxt-animate.css": "^0.0.1",
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/dotenv": "^1.3.0",
     "@nuxtjs/google-analytics": "^2.2.0",
     "@nuxtjs/style-resources": "^0.1.2",
-    "core-js": "2",
     "cross-env": "^5.2.0",
     "imagemin-mozjpeg": "^8.0.0",
     "imagemin-pngquant": "^8.0.0",
     "imagemin-svgo": "^7.0.0",
+    "node-modules": "^1.0.1",
     "node-sass": "^4.12.0",
     "nuxt": "^2.4.0",
     "nuxt-babel": "^1.0.1",
+    "regenerator-runtime": "^0.13.2",
     "sass-loader": "^7.1.0",
     "vue-numeral-filter": "^1.1.1",
     "vue2-google-maps": "^0.10.6",
     "vuedraggable": "^2.23.0"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.4.5",
+    "@babel/core": "^7.5.0",
+    "@babel/preset-env": "^7.5.0",
     "@babel/preset-stage-2": "^7.0.0",
-    "@babel/runtime-corejs2": "^7.5.1",
-    "autoprefixer": "^9.6.1",
-    "nodemon": "^1.18.9",
-    "postcss-loader": "^3.0.0"
+    "@babel/runtime": "^7.5.1",
+    "babel-loader": "^8.0.6",
+    "core-js": "2.6.5",
+    "nodemon": "^1.18.9"
   }
 }

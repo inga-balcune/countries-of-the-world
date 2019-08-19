@@ -4,15 +4,6 @@
       <div class="item footer-section__app-copyright">
             <p class='footer-section__footer-copyright'>Site and copyright &copy; {{year}} Inga Balcune</p>
       </div>
-         <div class="item footer-section__app-facebook">
-              <a href="https://www.facebook.com/inga.balcune" target='blank' class='footer-section__footer-link'><i class="fab fa-facebook-f"></i></a>
-        </div>
-        <div class="item footer-section__app-linkedin">
-                <a href="https://www.linkedin.com/in/ingabalcune" target='blank' class='footer-section__footer-link'><i class="fab fa-linkedin-in"></i></a>
-        </div>
-        <div class="item footer-section__app-instagram">
-                <a href="https://www.instagram.com/ingabalcune" target='blank' class='footer-section__footer-link'><i class="fab fa-instagram"></i></a>
-        </div>
     </footer>
   </div>
 </template>

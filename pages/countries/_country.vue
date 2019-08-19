@@ -81,7 +81,6 @@
 import axios from 'axios'
 import { mapState } from 'vuex'
 export default {
-  // middleware: 'path',
   data() { 
     return {
       path: this.$route.params.country,

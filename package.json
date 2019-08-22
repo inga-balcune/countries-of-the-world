@@ -5,7 +5,7 @@
   "author": "Inga",
   "private": true,
   "engines": {
-    "node": "12.3.1",
+    "node": "12.9.1",
     "yarn": "1.16.0"
   },
   "scripts": {
@@ -14,6 +14,15 @@
     "start": "nuxt start",
     "generate": "nuxt generate",
     "heroku-postbuild": "npm run build"
+  },
+  "resolutions": {
+    "tunnel-agent": "^0.6.0",
+    "lodash": "^4.17.11",
+    "hoek": "^5.0.3",
+    "@hapi/hoek": "^8.2.2",
+    "mime": "^2.4.4",
+    "request": "^2.88.0",
+    "qs": "^6.8.0"
   },
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
@@ -31,11 +40,14 @@
     "node-sass": "^4.12.0",
     "nuxt": "^2.4.0",
     "nuxt-babel": "^1.0.1",
+    "qs": "^6.8.0",
     "regenerator-runtime": "^0.13.2",
     "sass-loader": "^7.1.0",
+    "tunnel-agent": "^0.6.0",
     "vue-numeral-filter": "^1.1.1",
     "vue2-google-maps": "^0.10.6",
-    "vuedraggable": "^2.23.0"
+    "vuedraggable": "^2.23.0",
+    "webpack": "^4.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.5.0",
@@ -44,6 +56,7 @@
     "@babel/runtime": "^7.5.1",
     "babel-loader": "^8.0.6",
     "core-js": "2.6.5",
-    "nodemon": "^1.18.9"
+    "nodemon": "^1.18.9",
+    "nsp": "^3.2.1"
   }
 }

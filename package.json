@@ -1,7 +1,7 @@
 {
   "name": "country-page",
   "version": "1.0.0",
-  "description": "Countries related information and a quiz",
+  "description": "Countries information and a quiz",
   "author": "Inga",
   "private": true,
   "engines": {

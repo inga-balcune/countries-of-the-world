@@ -13,7 +13,7 @@
           <nuxt-link to='/countries' class='navbar__main-nav--nav-links'>Countries</nuxt-link>
         </li>
         <li @click='showMenu'>
-          <nuxt-link to='/challange' class='navbar__main-nav--nav-links'>Challange</nuxt-link>
+          <nuxt-link to='/challenge' class='navbar__main-nav--nav-links'>Challenge</nuxt-link>
         </li>
         <li @click='showMenu'>
           <nuxt-link to='/about' class='navbar__main-nav--nav-links'>About</nuxt-link>

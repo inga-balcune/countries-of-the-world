@@ -4,7 +4,7 @@
     <p class='app-about-section__content'>Hello, I am Inga, a new front end developer based in Copenhagen, Denmark.</p>
     <p class='app-about-section__content'>This is my first serious web development project, which is meant to showcase my newly acquired coding skills.</p> 
 
-     <h3>Challanges</h3>
+     <h3>Challenges</h3>
       <p>Some of the biggest challenges I faced were around drag and drop functionality, communication between components, code structure, naming variables, giving class names, layout and design ideas.</p>
 
     <h3>Features</h3>
@@ -61,7 +61,7 @@ export default {
     return {
       title: 'All about the project of Countries of the World',
       meta: [
-        { hid: 'description', name: 'description', content: 'Countries of the World web development project information, techniques, challanges and features.' }
+        { hid: 'description', name: 'description', content: 'Countries of the World web development project information, techniques, challenges and features.' }
       ]
     }
   }

@@ -249,7 +249,7 @@ export default {
   display: block;
   overflow: hidden;
   width: 100%;
-  background-color: $color-challange-header-bkg;
+  background-color: $color-challenge-header-bkg;
   padding: 2rem 3rem;
 
 }
@@ -322,7 +322,7 @@ h3 {
 
 .content-container {
   padding: 2rem 3rem;
-  background: $color-challange-content-bkg;
+  background: $color-challenge-content-bkg;
 
     &__wrapper {
     display: grid;

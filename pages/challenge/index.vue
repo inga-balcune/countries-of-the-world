@@ -2,17 +2,17 @@
   <div>
 
     <header>
-      <h1>Country Challange</h1>
+      <h1>Country Challenge</h1>
     </header>
 
     <main>
-      <AppChallangeIntro v-if='!startChallange' />
+      <AppChallengeIntro v-if='!startChallenge' />
 
-      <div class='button-container' v-if='!startChallange'>
+      <div class='button-container' v-if='!startChallenge'>
         <button class='page-button u-margin-top-medium' @click='startNow'>Start now</button>
       </div>
 
-      <AppChallange class='app-challange-section' v-else/>
+      <AppChallenge class='app-challenge-section' v-else/>
     </main>
 
   </div>
@@ -24,21 +24,21 @@
 export default {
   head () {
     return {
-      title: 'Country Challange',
+      title: 'Country Challenge',
       meta: [
-        { hid: 'description', name: 'description', content: 'Countries related trivia question challange. Guess country names that include given letter combination.' }
+        { hid: 'description', name: 'description', content: 'Countries related trivia question challenge. Guess country names that include given letter combination.' }
       ]
     }
   },
   data() {
     return {
-      startChallange: false
+      startChallenge: false
     }
   },
   methods: {
-    // start the challange
+    // start the challenge
     startNow() {
-      this.startChallange = true
+      this.startChallenge = true
     }
   }
   
@@ -78,7 +78,7 @@ main {
     }
 }
 
-.app-challange-section {
+.app-challenge-section {
   max-width: 76.8rem;
   margin: 0 auto;
 }

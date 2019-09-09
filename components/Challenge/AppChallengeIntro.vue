@@ -17,7 +17,7 @@ export default {
 .start-container {
   max-width: 76.8rem;
   margin: 0 auto;
-  background-color: $color-challange-header-bkg;
+  background-color: $color-challenge-header-bkg;
   padding: 2rem 3rem;
 
   &__rules {

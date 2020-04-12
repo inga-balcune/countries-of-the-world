@@ -1,22 +1,25 @@
 <template>
   <div>
     <nav class="navbar">
-      <span class="navbar__toggle" @click='showMenu'>
-          <i class="fas fa-bars"></i>
+      <span class="navbar__toggle" @click="showMenu">
+        <i class="fas fa-bars"></i>
       </span>
-      <a href='https://inga-balcune-portfolio.herokuapp.com/' target='_blank' class='navbar__logo'><span class='navbar__logo--subtitle'>Developed by</span> <span class='navbar__logo--title'>Inga Balcune</span></a>
+      <a href="https://ingabalcune.dev" target="_blank" class="navbar__logo">
+        <span class="navbar__logo--subtitle">Developed by</span>
+        <span class="navbar__logo--title">Inga Balcune</span>
+      </a>
       <ul class="navbar__main-nav" :class="{active: isActive}">
-        <li @click='showMenu'>
-          <nuxt-link to='/' class='navbar__main-nav--nav-links'>Home</nuxt-link>
+        <li @click="showMenu">
+          <nuxt-link to="/" class="navbar__main-nav--nav-links">Home</nuxt-link>
         </li>
-        <li @click='showMenu'>
-          <nuxt-link to='/countries' class='navbar__main-nav--nav-links'>Countries</nuxt-link>
+        <li @click="showMenu">
+          <nuxt-link to="/countries" class="navbar__main-nav--nav-links">Countries</nuxt-link>
         </li>
-        <li @click='showMenu'>
-          <nuxt-link to='/challenge' class='navbar__main-nav--nav-links'>Challenge</nuxt-link>
+        <li @click="showMenu">
+          <nuxt-link to="/challenge" class="navbar__main-nav--nav-links">Challenge</nuxt-link>
         </li>
-        <li @click='showMenu'>
-          <nuxt-link to='/about' class='navbar__main-nav--nav-links'>About</nuxt-link>
+        <li @click="showMenu">
+          <nuxt-link to="/about" class="navbar__main-nav--nav-links">About</nuxt-link>
         </li>
       </ul>
     </nav>
@@ -28,36 +31,32 @@ export default {
   data() {
     return {
       isActive: false
-    }
+    };
   },
   methods: {
     showMenu() {
-      this.isActive = !this.isActive
+      this.isActive = !this.isActive;
     }
   }
-  
-  }
-
+};
 </script>
 
 <style lang='scss' scoped>
-
 .navbar {
   font-size: 1.8rem;
   background-color: $color-black;
-  border: .1rem solid rgba($color-black, 0.2);
+  border: 0.1rem solid rgba($color-black, 0.2);
   opacity: 0.9;
   height: auto;
   top: 0;
   width: 100%;
   z-index: 3;
   position: relative;
-  
 
   &__logo {
     display: block;
     width: 40%;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: 600;
     font-size: 1.8rem;
     text-decoration: none;
@@ -68,17 +67,15 @@ export default {
     text-align: center;
 
     &--subtitle {
-        font-size: 1.2rem;
-        display: block;
-        margin-bottom: -.5rem;
+      font-size: 1.2rem;
+      display: block;
+      margin-bottom: -0.5rem;
     }
 
     &:hover {
       color: rgba($color-white, 1);
     }
-
   }
-
 
   &__toggle {
     position: absolute;
@@ -93,29 +90,25 @@ export default {
     list-style-type: none;
     // overflow: hidden;
     display: none;
-    
-    
 
     &--nav-links {
-      font-family: 'Montserrat', sans-serif;
+      font-family: "Montserrat", sans-serif;
       font-weight: 600;
       font-size: 1.8rem;
       text-decoration: none;
       text-transform: uppercase;
       color: $color-quaternary;
-      padding: .5rem 2rem;
+      padding: 0.5rem 2rem;
 
       &:hover {
         color: rgba($color-white, 1);
       }
     }
-
   }
 
   &__main-nav li {
     text-align: center;
-    margin: .7rem auto;
-
+    margin: 0.7rem auto;
   }
 }
 
@@ -136,12 +129,10 @@ export default {
       width: auto;
       margin: 1rem 1rem 1rem 3rem;
 
-
       &--subtitle {
         font-size: 1.2rem;
         display: block;
-        margin-bottom: -.7rem;
-
+        margin-bottom: -0.7rem;
       }
 
       &--title {
@@ -156,7 +147,7 @@ export default {
         color: $color-white;
       }
 
-       &:visited {
+      &:visited {
         color: $color-quaternary;
       }
     }
@@ -185,9 +176,6 @@ export default {
         }
       }
     }
-
   }
-
 }
-
 </style>
